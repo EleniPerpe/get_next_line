@@ -6,45 +6,51 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 17:29:37 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/04 18:28:23 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/07 20:42:30 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
 
-// {
-// 	int	i;
+	j = 0;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	if (size == '\0')
+	{
+		return (i);
+	}
+	while (src[j] != '\0' && j < size - 1)
+	{
+		dst[j] = src[j];
+		j++;
+	}
+	if (size > 0)
+	{
+		dst[j] = '\0';
+	}
+	return (i);
+}
 
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		if (s[i] == (char)c)
-// 		{
-// 			return ((char *)&s[i]);
-// 		}
-// 		i++;
-// 	}
-// 	if (s[i] == (char)c)
-// 	{
-// 		return ((char *)&s[i]);
-// 	}
-// 	return (NULL);
-// }
+char	*ft_strdup(const char *s1)
+{
+	char	*ptr;
+	size_t	n;
 
-// char	*ft_strdup(const char *s1)
-// {
-// 	char	*ptr;
-// 	size_t	n;
-
-// 	n = ft_strlen(s1) + 1;
-// 	ptr = (char *) malloc(n * sizeof(char));
-// 	if (ptr == NULL)
-// 		return (NULL);
-// 	ft_strlcpy(ptr, s1, n);
-// 	return (ptr);
-// }
+	n = ft_strlen(s1) + 1;
+	ptr = (char *) malloc(n * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+	ft_strlcpy(ptr, s1, n);
+	return (ptr);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
