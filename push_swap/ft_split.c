@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:33:06 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/11 23:54:13 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:21:27 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ int		counter(char const *s, char c);
 char	*get_string(char const *s, int i, int len);
 char	**calc(char **res, const char *s, char c, int i);
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c, int *i)
 {
 	char	**res;
-	int		count;
 
 	if (!s)
 	{
@@ -33,8 +32,8 @@ char	**ft_split(char const *s, char c)
 		res[0] = NULL;
 		return (res);
 	}
-	count = counter(s, c);
-	res = malloc ((count + 1) * sizeof(char *));
+	*i = counter(s, c);
+	res = malloc (((*i) + 1) * sizeof(char *));
 	if (res == NULL)
 		return (NULL);
 	res = calc(res, s, c, 0);
