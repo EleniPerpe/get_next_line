@@ -1,0 +1,3 @@
+get_next_line is a C function designed to read a file descriptor (such as a text file or the standard input) line by line. The function allows for efficient memory management by reading only as much data as needed at each call, ensuring that the file is read incrementally, line by line. It handles various edge cases, such as handling files with or without newline characters and works with different buffer sizes specified at compile time.
+
+This project demonstrates how to work with file descriptors, manage dynamic memory efficiently, and implement a function that reads files in a way similar to fgets() or getline() but with the added functionality of handling buffer sizes and ensuring minimal memory usage.
